@@ -44,7 +44,12 @@ public class StudyMatchingController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown ("space") && !hasStarted) {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (Input.GetKeyDown ("space") && !hasStarted) {
 			Image img = canvas.GetComponent<Image>();
 			img.color = UnityEngine.Color.clear;
 			text.gameObject.SetActive (false);
@@ -75,18 +80,18 @@ public class StudyMatchingController : MonoBehaviour {
 	IEnumerator PauseAfterFinish (){
 		yield return new WaitForSeconds (pauseAfterFinish);
 		triviaPanel.SetActive (true);
-		while (!Input.GetKeyDown (KeyCode.M) && !Input.GetKeyDown (KeyCode.Z))
+		while (!Input.GetKeyDown (KeyCode.Alpha5) && !Input.GetKeyDown (KeyCode.Alpha9))
 			yield return null;
 
 
 		if (_expInstance.Phase == PhaseEnum.StudyVideoMatching && _expInstance.Phase == PhaseEnum.StudyVideoMatching) {
-			if (Input.GetKeyDown (KeyCode.M)) {
+			if (Input.GetKeyDown (KeyCode.Alpha5)) {
 				_expInstance.MatchingAnswers [_expInstance.MatchingTrialIndex % 9] = "Match";
 				if (activeSpheres.name [3].ToString () == "a") {
 					_expInstance.MatchingScore++;
 				}
 				
-			} else if (Input.GetKeyDown (KeyCode.Z) && _expInstance.Phase == PhaseEnum.StudyVideoMatching) {
+			} else if (Input.GetKeyDown (KeyCode.Alpha9) && _expInstance.Phase == PhaseEnum.StudyVideoMatching) {
 				_expInstance.MatchingAnswers [_expInstance.MatchingTrialIndex % 9] = "Mismatch";
 				if (activeSpheres.name [3].ToString () == "i") {
 					_expInstance.MatchingScore++;
