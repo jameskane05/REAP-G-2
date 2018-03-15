@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052769}
   m_Layer: 0
-  m_Name: S7
+  m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 43952870}
   m_Layer: 0
-  m_Name: S8
+  m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,7 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130920485}
   m_Layer: 0
-  m_Name: S12
+  m_Name: Trashcan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1897409708686700, guid: e5064a855cb08ef4d8cd6deec3e2e755, type: 2}
       propertyPath: m_Name
-      value: Flower Bed
+      value: Flowers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5064a855cb08ef4d8cd6deec3e2e755, type: 2}
@@ -2458,7 +2458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249503707}
   m_Layer: 0
-  m_Name: S10
+  m_Name: Fountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2820,7 +2820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300716802}
   m_Layer: 0
-  m_Name: S1
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5971,7 +5971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679380019}
   m_Layer: 0
-  m_Name: S3
+  m_Name: Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6134,7 +6134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 119818, guid: 8e6bcd774c14b4349ba97827b2099921, type: 2}
       propertyPath: m_Name
-      value: Trash Can
+      value: Trashcan
       objectReference: {fileID: 0}
     - target: {fileID: 2386126, guid: 8e6bcd774c14b4349ba97827b2099921, type: 2}
       propertyPath: m_CastShadows
@@ -10788,6 +10788,7 @@ MonoBehaviour:
   - {fileID: 50460076}
   - {fileID: 699031306}
   rotationDuration: 6
+  sessionMaxDuration: 120
 --- !u!4 &1118828397
 Transform:
   m_ObjectHideFlags: 0
@@ -11691,7 +11692,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 916e0c9092e0edb4fa8645a2cf9a92e7, type: 2}
       propertyPath: m_Name
-      value: Bird Cage
+      value: Birdcage
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11100000, guid: 916e0c9092e0edb4fa8645a2cf9a92e7, type: 2}
@@ -11726,7 +11727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221218613}
   m_Layer: 0
-  m_Name: S2
+  m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13461,7 +13462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410246565}
   m_Layer: 0
-  m_Name: S5
+  m_Name: Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15758,7 +15759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1606133489}
   m_Layer: 0
-  m_Name: S11
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17002,7 +17003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756916551}
   m_Layer: 0
-  m_Name: S9
+  m_Name: Shovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17030,7 +17031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759151709}
   m_Layer: 0
-  m_Name: S4
+  m_Name: Birdcage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18689,7 +18690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1649202799252698, guid: b8c3d927dfd9f5b48a30a3e54661220f, type: 2}
       propertyPath: m_Name
-      value: Flower Pot
+      value: Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8c3d927dfd9f5b48a30a3e54661220f, type: 2}
@@ -19182,7 +19183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992814200}
   m_Layer: 0
-  m_Name: S6
+  m_Name: Hose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

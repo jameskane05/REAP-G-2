@@ -11,7 +11,7 @@ public class End : MonoBehaviour {
         Debug.Log("MazeEnd() being called due to maze completion");
 
 
-		PracticeController.MazeEnd();
+		MazeController.MazeEnd();
     }
     
 }

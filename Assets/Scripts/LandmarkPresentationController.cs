@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.IO;
 
 public class LandmarkPresentationController : MonoBehaviour {
 
@@ -13,15 +13,17 @@ public class LandmarkPresentationController : MonoBehaviour {
 	[SerializeField] private Text text;
 	private Image img;
 	private bool hasStarted = false;
+	public ExperimentSettings _expInstance;
 
 	void Start () {
 		img = GameObject.Find("Canvas").GetComponent<Image>();
+		_expInstance = ExperimentSettings.GetInstance ();
 	}
 
 	void Update() {
 		if (Input.GetKeyDown ("space") && !hasStarted) {
-			StartCoroutine (CycleLandmarks ());
 			hasStarted = true;
+			StartCoroutine (CycleLandmarks ());
 		}
 	}
 
@@ -33,9 +35,10 @@ public class LandmarkPresentationController : MonoBehaviour {
 
 	IEnumerator CycleLandmarks()
 	{
-		text.gameObject.SetActive (false);
+		
 		int[] randomOrder = RandomizeOrder ();
 		for (int n = 0; n < OccursThisManyTimes; n++) {
+			text.gameObject.SetActive (false);
 			int picCounter = 0;
 			while (picCounter < randomOrder.Length )
 			{
@@ -44,9 +47,19 @@ public class LandmarkPresentationController : MonoBehaviour {
 				yield return new WaitForSeconds(SlideDuration);
 				picCounter++;
 			}
+			text.gameObject.SetActive (true);
+			img.sprite = null;
+			img.color = UnityEngine.Color.black;
+			if (n < OccursThisManyTimes - 1)
+				text.text = "Please pay attention to the names of the objects again.";
+			else
+				text.text = "";
+			yield return new WaitForSeconds(SlideDuration);
 		}
+		text.gameObject.SetActive (false);
 		img.color = UnityEngine.Color.clear;
 		StudyTestOptionsPanel.SetActive (true);
+		LandmarkPresentationComplete ();
 	}
 
 	public int[] RandomizeOrder(){
@@ -68,5 +81,12 @@ public class LandmarkPresentationController : MonoBehaviour {
 			deck[j] = swap;
 		}
 		return deck;
+	}
+
+	public void LandmarkPresentationComplete () {
+		if (!File.Exists (_expInstance.FileName))
+			System.IO.File.WriteAllText (_expInstance.FileName, "Landmark Presentation completed.\r\n");
+		else
+			System.IO.File.AppendAllText (_expInstance.FileName, "Landmark Presentation completed.\r\n");
 	}
 }

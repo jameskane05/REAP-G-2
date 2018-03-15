@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class StudyMatchingController : MonoBehaviour {
@@ -80,29 +81,56 @@ public class StudyMatchingController : MonoBehaviour {
 	IEnumerator PauseAfterFinish (){
 		yield return new WaitForSeconds (pauseAfterFinish);
 		triviaPanel.SetActive (true);
+
+
+		//WRITE TO FILE MATCHING ANSWER - INCLUDING WHAT PATH, ANSWER GIVEN, CORRECT ANSWER.
+
+
+
+
 		while (!Input.GetKeyDown (KeyCode.Alpha5) && !Input.GetKeyDown (KeyCode.Alpha9))
 			yield return null;
 
 
-		if (_expInstance.Phase == PhaseEnum.StudyVideoMatching && _expInstance.Phase == PhaseEnum.StudyVideoMatching) {
+
+		if (_expInstance.Phase == PhaseEnum.StudyVideoMatching) {
+			if (!File.Exists (_expInstance.FileName))
+				System.IO.File.WriteAllText (_expInstance.FileName, 
+					"Matching Path No.: " + (_expInstance.MatchingTrialIndex % 9) + "\r\n");
+			else
+				System.IO.File.AppendAllText (_expInstance.FileName, 
+					"Matching Path No.: " + (_expInstance.MatchingTrialIndex % 9) + "\r\n");
+
+
 			if (Input.GetKeyDown (KeyCode.Alpha5)) {
 				_expInstance.MatchingAnswers [_expInstance.MatchingTrialIndex % 9] = "Match";
 				if (activeSpheres.name [3].ToString () == "a") {
 					_expInstance.MatchingScore++;
+					System.IO.File.AppendAllText (_expInstance.FileName, "Answer Given: match, correct\r\n");
 				}
+				else 
+					System.IO.File.AppendAllText (_expInstance.FileName, "Answer Given: match, incorrect\r\n");
 				
 			} else if (Input.GetKeyDown (KeyCode.Alpha9) && _expInstance.Phase == PhaseEnum.StudyVideoMatching) {
 				_expInstance.MatchingAnswers [_expInstance.MatchingTrialIndex % 9] = "Mismatch";
 				if (activeSpheres.name [3].ToString () == "i") {
 					_expInstance.MatchingScore++;
+					System.IO.File.AppendAllText (_expInstance.FileName, "Answer Given: mismatch, correct\r\n");
 				}
+				else 
+					System.IO.File.AppendAllText (_expInstance.FileName, "Answer Given: mismatch, incorrect\r\n");
+				
 			}
+
+
 			_expInstance.VideoMatchingTrialIndex++;
 			_expInstance.MatchingTrialIndex++;
 
 			if (_expInstance.VideoMatchingTrialIndex > 17) {
 				Text text = GameObject.Find ("Text").GetComponent<Text> ();
 				text.text = "You have completed the trials.";
+
+				System.IO.File.AppendAllText (_expInstance.FileName, "Total Matching Score: " + _expInstance.MatchingScore + " out of 9 \r\n\r\n");
 				_expInstance.VideoMatchingTrialIndex = 0;
 			} else {
 				Debug.Log ("StudyVideoMatching ongoing, ending trial: " + _expInstance.VideoMatchingTrialIndex.ToString ());
