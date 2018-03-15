@@ -6426,6 +6426,11 @@ Prefab:
       propertyPath: m_ScreenMatchMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114534398840789096, guid: eaae4ce4b70863042b87c49e657e1ae3,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114317145814713450, guid: eaae4ce4b70863042b87c49e657e1ae3, type: 2}
     - {fileID: 114126879715208914, guid: eaae4ce4b70863042b87c49e657e1ae3, type: 2}
