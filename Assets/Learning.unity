@@ -10532,7 +10532,7 @@ MonoBehaviour:
   - {fileID: 984716657}
   text: {fileID: 1466232407}
   canvas: {fileID: 1704742586}
-  tourDuration: 120
+  tourDuration: 5
   pauseBeforeStart: 2
   pauseAfterFinish: 2
 --- !u!4 &1118828397

@@ -133,14 +133,14 @@ public class StudyMatchingController : MonoBehaviour {
 				System.IO.File.AppendAllText (_expInstance.FileName, "Total Matching Score: " + _expInstance.MatchingScore + " out of 9 \r\n\r\n");
 				_expInstance.VideoMatchingTrialIndex = 0;
 			} else {
-				Debug.Log ("StudyVideoMatching ongoing, ending trial: " + _expInstance.VideoMatchingTrialIndex.ToString ());
-				SceneManager.LoadScene (_expInstance.VideoMatchingOrder [_expInstance.VideoMatchingTrialIndex - 1].ToString ());
+				Debug.Log ("StudyVideoMatching ongoing, starting trial: " + _expInstance.VideoMatchingTrialIndex.ToString ());
+				SceneManager.LoadScene (_expInstance.VideoMatchingOrder [_expInstance.VideoMatchingTrialIndex].ToString ());
 			}
 		}
 
-		Debug.Log ("MatchingTrialIndex: " + (_expInstance.MatchingTrialIndex).ToString());
-		Debug.Log ("MatchingScore: " + _expInstance.MatchingScore.ToString());
-		Debug.Log ("VideoMatchingTrialIndex: " + (_expInstance.VideoMatchingTrialIndex % 19).ToString());
+		//Debug.Log ("MatchingTrialIndex: " + (_expInstance.MatchingTrialIndex).ToString());
+		//Debug.Log ("MatchingScore: " + _expInstance.MatchingScore.ToString());
+		Debug.Log ("VideoMatchingTrialIndex: " + (_expInstance.VideoMatchingTrialIndex).ToString());
 
 		if (_expInstance.Phase == PhaseEnum.StudyMatching) {
 			SceneManager.LoadScene (0);

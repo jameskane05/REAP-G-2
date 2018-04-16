@@ -8391,7 +8391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1499108938142458, guid: ecb564c1d04c21a45a2effdfd44f4b45, type: 2}
-  tourDuration: 120
+  tourDuration: 5
   spheres:
   - {fileID: 1939230396}
   - {fileID: 839707725}
