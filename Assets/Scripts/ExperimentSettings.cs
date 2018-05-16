@@ -28,6 +28,10 @@ public class ExperimentSettings {
 	public int MatchingTrialIndex = 0;
 	public int VideoTrialIndex = 0;
 	public int TestTrialIndex = 0;
+    public string[] TestTrialTypes = ["shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut",
+        "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut",
+        "novel-same", "novel-same", "novel-same", "novel-same", 
+        "novel-longer", "novel-longer", "novel-longer", "novel-longer"];
 	public int TestTrialCtr = 0;
 	public string[] MatchingAnswers;
 	public VideoMatchingPhaseEnum[] VideoMatchingOrder;
