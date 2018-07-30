@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -341,7 +341,8 @@ MonoBehaviour:
   ExperimenterInitialsInput: {fileID: 313098069}
   FirstPanel: {fileID: 1600043323}
   MainOptionsPanel: {fileID: 508525251}
-  StudyVideoMatchingTrials: 18
+  StudyOptionsPanel: {fileID: 1504178075}
+  StudyVideoMatchingTrials: 14
 --- !u!114 &186672085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,7 +866,7 @@ Prefab:
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 212
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -890,7 +891,7 @@ Prefab:
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -900,7 +901,7 @@ Prefab:
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224092952641105466, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -940,7 +941,7 @@ Prefab:
     - target: {fileID: 224627154972040150, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224627154972040150, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -950,12 +951,12 @@ Prefab:
     - target: {fileID: 224627154972040150, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224627154972040150, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224627154972040150, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -970,7 +971,7 @@ Prefab:
     - target: {fileID: 224990397994886834, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224990397994886834, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
@@ -980,12 +981,12 @@ Prefab:
     - target: {fileID: 224990397994886834, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224990397994886834, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 261
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224990397994886834, guid: 258e5b45c9ddf534b87e158a707db849,
         type: 2}

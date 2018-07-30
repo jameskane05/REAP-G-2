@@ -84,9 +84,27 @@ public class LandmarkPresentationController : MonoBehaviour {
 	}
 
 	public void LandmarkPresentationComplete () {
-		if (!File.Exists (_expInstance.FileName))
-			System.IO.File.WriteAllText (_expInstance.FileName, "Landmark Presentation completed.\r\n");
-		else
-			System.IO.File.AppendAllText (_expInstance.FileName, "Landmark Presentation completed.\r\n");
-	}
+        List<string> experimentHeader = GetExperimentHeader();
+
+        if (!File.Exists(_expInstance.FileName + "_path.txt"))
+        {
+            System.IO.File.WriteAllLines(_expInstance.FileName + "_path.txt", experimentHeader.ToArray());
+            System.IO.File.WriteAllLines(_expInstance.FileName + "_path_data.txt", experimentHeader.ToArray());
+        }
+
+        System.IO.File.AppendAllText (_expInstance.FileName + "_path.txt", "Landmark Presentation completed.\r\n");
+        System.IO.File.AppendAllText (_expInstance.FileName + "_path_data.txt", "Landmark Presentation completed.\r\n");
+    }
+
+    static private List<string> GetExperimentHeader()
+    {
+        List<string> experimentHeader = new List<string>();
+
+        ExperimentSettings _expInstance = ExperimentSettings.GetInstance();
+        experimentHeader.Add("Participant ID: " + _expInstance.ParticipantID);
+        experimentHeader.Add("Experimenter Initials: " + _expInstance.ExperimenterInitials);
+        experimentHeader.Add("Date: " + _expInstance.Date);
+        experimentHeader.Add("\r\n");
+        return experimentHeader;
+    }
 }
