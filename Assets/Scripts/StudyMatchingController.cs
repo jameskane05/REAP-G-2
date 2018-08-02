@@ -157,8 +157,10 @@ public class StudyMatchingController : MonoBehaviour {
 			_expInstance.MatchingTrialIndex++;
 
 			if (_expInstance.VideoMatchingTrialIndex > 13) {
-				Text text = GameObject.Find ("Text").GetComponent<Text> ();
+				Text text = GameObject.Find ("QuestionText").GetComponent<Text> ();
 				text.text = "You have completed the trials.";
+                Text buttonText = GameObject.Find("ButtonText").GetComponent<Text>();
+                text.text = "";
 
 				System.IO.File.AppendAllText (_expInstance.FileName + "_data.txt", "Total Matching Score: " + _expInstance.MatchingScore + " out of 5 \r\n\r\n");
                 System.IO.File.AppendAllText(_expInstance.FileName + "_data_path.txt", "Total Matching Score: " + _expInstance.MatchingScore + " out of 5 \r\n\r\n");
@@ -175,7 +177,7 @@ public class StudyMatchingController : MonoBehaviour {
         //Debug.Log ("VideoMatchingTrialIndex: " + (_expInstance.VideoMatchingTrialIndex).ToString());
 
         if (_expInstance.Phase == PhaseEnum.StudyMatching) {
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene ("Menu");
 		}
 	}
 
