@@ -160,12 +160,16 @@ public class StudyMatchingController : MonoBehaviour {
 				Text text = GameObject.Find ("QuestionText").GetComponent<Text> ();
 				text.text = "You have completed the trials.";
                 Text buttonText = GameObject.Find("ButtonText").GetComponent<Text>();
-                text.text = "";
+                buttonText.text = "";
 
 				System.IO.File.AppendAllText (_expInstance.FileName + "_data.txt", "Total Matching Score: " + _expInstance.MatchingScore + " out of 5 \r\n\r\n");
                 System.IO.File.AppendAllText(_expInstance.FileName + "_data_path.txt", "Total Matching Score: " + _expInstance.MatchingScore + " out of 5 \r\n\r\n");
                 _expInstance.VideoMatchingTrialIndex = 0;
-			} else {
+
+                yield return new WaitForSeconds(3);
+                SceneManager.LoadScene("Menu");
+			}
+            else {
 				//Debug.Log ("StudyVideoMatching ongoing, starting trial: " + _expInstance.VideoMatchingTrialIndex.ToString ());
 				SceneManager.LoadScene (_expInstance.VideoMatchingOrder [_expInstance.VideoMatchingTrialIndex].ToString ());
 			}

@@ -52,6 +52,7 @@ public class ExperimentSettings {
 	}
 		
 	private ExperimentSettings(){}
+    
 
     /*public static void NameAndCountTrial()
     {
