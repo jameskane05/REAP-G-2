@@ -30,6 +30,7 @@ public class ExperimentSettings {
 	public int MatchingTrialIndex = 0;
 	public int VideoTrialIndex = 0;
 	public int TestTrialIndex = 0;
+    public int[] TestTrialOrder;
     public string[] TestTrialTypes = new string[24] {"shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut",
         "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut", "shortcut",
         "novel-same", "novel-same", "novel-same", "novel-same",
